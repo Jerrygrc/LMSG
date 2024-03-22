@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-300 to-cyan-100 min-h-screen flex items-center justify-center">
+    <div id="quizCaja" class="bg-gray-50 p-8 rounded-xl shadow-xl">
+        <h1 class="text-2xl text-white text font-serif font-bold mb-4 rounded-md text-center bg-blue-600 p-3">Brain Quest: ¡El Desafío!</h1>
+        <div id="infoPregunta" class="p-4 font-semibold text-center"></div>
+        <div id="preguntaCaja" class="p-4 font-semibold"></div>
+        <div id="opcionesCaja" class="flex flex-row justify-around"></div>
+        <div class="flex justify-center">
+            <button id="btnSiguiente" class="bg-blue-500 text-white p-3 mt-2 rounded-md font-semibold">Siguiente pregunta</button>
+        </div>
+        <div id="resultadoCaja" class="mt-4"></div>
+    </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
