@@ -15,7 +15,7 @@ let listaPreguntas = [{
         },
     ]
 },
-{   //se repite la estructura anterior para cada pregunta con sus posibles respuestas y la verificación de si son correctas o no
+{   //Se repite la estructura anterior para cada pregunta con sus posibles respuestas y la verificación de si son correctas o no
     pregunta: "¿Cómo se llama el proceso de paso de estado gaseoso a sólido de manera directa?", 
     opcion: [{
             respuesta: "Sublimación directa", 
@@ -105,7 +105,7 @@ function mostrarPregunta(indice) {
 }
 
 // Con esta función comprobamos que la respuesta seleccionada es correcta
-function comprobarRespuesta(esCorrecta, opcion, indiceOpcionSeleccionada) {
+function comprobarRespuesta(esCorrecta) {
     // Con un if, que recibe el valor de esCorrecta, incrementamos las variables que almacenan las respuestas acertadas y falladas
     if (esCorrecta) {//si el valor es true se incrementa acertadas
         acertadas++;
@@ -116,22 +116,22 @@ function comprobarRespuesta(esCorrecta, opcion, indiceOpcionSeleccionada) {
 
 // Creamos en evento con el método addEventListener para que cuando se haga click con el ratón se ejecute el bloque de código entre corchetes
 btnSiguiente.addEventListener('click', () => {
-    // almacenamos la pregunbta actual que se muestra
+    // Almacenamos la pregunbta actual que se muestra
     let preguntaActual = listaPreguntas[indicePreguntaActual];
 
-    // almacenamos el valor del atributo esCorrecta de la opción que se clicó en úlitma instancia en la variable esCorrecta
+    // Almacenamos el valor del atributo esCorrecta de la opción que se clicó en úlitma instancia en la variable esCorrecta
     let esCorrecta = preguntaActual.opcion[ultRespuestaEscogida].esCorrecta;
 
     // Llamamos a la función para comprobar que la respuesta es correcta o no
-    comprobarRespuesta(esCorrecta, preguntaActual.opcion, ultRespuestaEscogida);
+    comprobarRespuesta(esCorrecta);
 
     // Incrementamos en 1 el índice del array de preguntas para pasar a la siguiente cuestión
     indicePreguntaActual++;
 
-    // Con el siguietne condicional comprobamos si hay más preguntas
+    // Con el siguiente condicional comprobamos si hay más preguntas
     if (indicePreguntaActual < listaPreguntas.length) {//si el índice de la pregunta es menor que la longitud del array de preguntas se ejecuta el código siguietne
         mostrarPregunta(indicePreguntaActual);//llamamos a la función mostrarPregunta() con el índice actualizado
-        cajaResultado.textContent = '';//limpiamos la caja resultado de testo
+        cajaResultado.textContent = '';//limpiamos la caja resultado de texto
         
     } else {
         // Si no hay más preguntas, mostramos el resultado final
